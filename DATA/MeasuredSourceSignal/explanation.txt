@@ -1,0 +1,3 @@
+p_ref_0_5m_bar.mat is a recorded sound pressure 0.5  m above the airgun source.
+Bursts8.mat is the interoplated pressure, and the reconstructed source pulse, B8, (increased samples by a factor of 8). 
+Deconvolusjon.pdf explains how the source pulse was reconstructed from the measured pulse (which contain surface reflection, and possible bottom reflection)
