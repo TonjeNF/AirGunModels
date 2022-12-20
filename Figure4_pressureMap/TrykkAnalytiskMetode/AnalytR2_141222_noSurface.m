@@ -9,7 +9,7 @@ f=59; %Hz
 S=sin(2*pi*f*dt*(1:15000));
 B=9405; %amplitude
 d=2.5; %kildedyp i meter
-dx=0.05;;%  5 cm oppløsning
+dx=0.1;;%  5 cm oppløsning
 dz=dx;%;
 x=0:dx:10;
 z=0:dz:8;
@@ -38,15 +38,5 @@ p=f1;%=(f1-f2); %endrar frå topol til punktkjelde (tek vekk overflata)
  X=[1:N]*dx;% For plotting
 Z=[1:M]*dz;
 
-[c,H]=contour(X,-Z,abs(B*p'),0:200:8000);
-%title(['Pressure Pa,  AnalytR, frq = ' num2str(f) ' Hz, delta =  500  Pa, R = ' num2str(R2) ', d = ' num2str(d) ' m'])
-clabel(c,H,0:1000:5000, 'FontSize', 18);
-w = H.LineWidth;
-H.LineWidth = 2;
-daspect([1 1 1])
-clim([1000 8000])
-%xlabel('Range -m')
-ylabel('Depth - m')
-grid
-set(gca,'xtick', [2.8 4.2 5.7],'ytick', [-4 -2.5 -1])
+
 toc
