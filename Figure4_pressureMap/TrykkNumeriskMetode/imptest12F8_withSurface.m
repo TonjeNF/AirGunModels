@@ -14,7 +14,7 @@ nS=length(B);
 d=2.5; %kildedyp i meter
 %%  Her velger du romlig oppløsning
 %dx=0.1;
-dx=0.05;;%  10cm oppløsning 0.1;%
+dx=0.1;;%  10cm oppløsning 0.1;%
 dz=dx;%
 x=0:dx:10;%10 m  Her velger du størrelsen på området!!
 z=0:dz:8;% 8 m
@@ -62,22 +62,7 @@ for n=1:N
         %Lpeak(n,m)=20*log10(max((JJ(n,m,:)))/1e-6);
     end
 end
-figure(1)
-[c,H]=contour(x,-z,P1',0:200:8000);
-clabel(c,H,0:1000:5000, 'FontSize', 18);
-w = H.LineWidth;
-H.LineWidth = 2;
-daspect([1 1 1])
-q=colorbar;
-q.Label.String='Pa'
-clim([1000 8000])
-xlabel('Range - m')
-%ylabel('Depth - m')
 
-
-%title(['Imptest12, Burst B1, max pressure Pa, delta=500 Pa, R = ' num2str(R2) ', d = ' num2str(d) ' m'])
-grid
-set(gca,'xtick',[2.8 4.2 5.7],'ytick',[-4 -2.5 -1]);
 
 %dlim=1e-2;limh=0.3;
 % figure(2)
