@@ -17,7 +17,7 @@ x2=x.^2;
 ct=c*dt;
 JJ=zeros(N,M,nS)+1; %Allokering av minne
 for m=1:M
-    r1(:,m)=sqrt(x2+((z(m)+dz)-d)^2); %vurder å plusse på dz
+    r1(:,m)=sqrt(x2+((z(m))-d)^2); %vurder å plusse på dz
 end
 for n=1:N
     for m=1:M
@@ -65,7 +65,7 @@ peakx=zeros(N-2,M);
 for m=1:M
     for n=1:N-2
         ax=-(JJ(n+2,m,:)-JJ(n,m,:))/Nev;
-        peakx(n,m)=max((ax));
+        peakx(n,m)=max(abs(ax));
     end
 end
 %%
@@ -84,7 +84,7 @@ JJ2=JJ(:,end:-1:1,:);
 for n=1:N
     for m=1:(M-2)
         az=-(JJ(n,m+2,:)-JJ(n,m,:))/Nev;
-        peakz(n,m)=max((az));
+        peakz(n,m)=max(abs(az));
     end
 end
 %% Figur 3
